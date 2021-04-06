@@ -33,7 +33,10 @@ async function run() {
         const messages = batch.messages.map((message) => ({
           offset: message.offset,
           key: message && message.key && message.key.toString(),
-          value: message && message.value && JSON.parse(type.fromBuffer(message.value)),
+          value:
+            message &&
+            message.value &&
+            JSON.parse(type.fromBuffer(message.value)),
           headers: message.headers,
         }));
 
